@@ -44,4 +44,8 @@ npm install -g commitizen
 novos comandos de repo:
 
 iniciar repo:
-commitizen init cz-conventional-changelog --save-dev --save-exact
+git init
+repoinit (commitizen init cz-conventional-changelog --save-dev --save-exact)
+git add .
+git cz
+git push origin main
