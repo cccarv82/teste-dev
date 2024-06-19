@@ -1,3 +1,6 @@
+criar arquivo .ignore:
+ignore -n python node
+
 como gerar assinatura pra commits
 
 verificar se existe chave criada:
@@ -31,12 +34,15 @@ git config --global tag.gpgsign true
 para verificar qual a assinatura do commit:
 git log --show-signature -1
 
-lint para commits:
+verificação para commits:
 
+docker run --rm --name="commitsar" -w /src -v "$(pwd)":/src aevea/commitsar commitsar .
+
+instalando o lint de commit no repo:
 npm install --save-dev @commitlint/{cli,config-conventional}
+
 echo "export default { extends: ['@commitlint/config-conventional'] };" > commitlint.config.js
 
-para a proxima parte, o repositorio git deve ter sido já criado
 npm install --save-dev husky
 npx husky init
 
