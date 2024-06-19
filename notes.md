@@ -38,30 +38,10 @@ verificação para commits:
 
 docker run --rm --name="commitsar" -w /src -v "$(pwd)":/src aevea/commitsar commitsar .
 
-instalando o lint de commit no repo:
-npm init
-npm install --save-dev @commitlint/{cli,config-conventional}
+instalando ferramenta para commit:
+npm install -g commitizen
 
-echo "export default { extends: ['@commitlint/config-conventional'] };" > commitlint.config.js
+novos comandos de repo:
 
-npm install --save-dev husky
-npx husky init
-
-# Add commit message linting to commit-msg hook
-
-echo "npx --no -- commitlint --edit \$1" > .husky/commit-msg
-
-adcionar no começo do package.json isso: "type": "module"
-
-exemplo:
-{
-"type": "module",
-"devDependencies": {
-"@commitlint/cli": "^19.3.0",
-"@commitlint/config-conventional": "^19.2.2",
-"husky": "^9.0.11"
-},
-"scripts": {
-"prepare": "husky"
-}
-}
+iniciar repo:
+commitizen init cz-conventional-changelog --save-dev --save-exact
