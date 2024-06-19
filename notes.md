@@ -30,3 +30,16 @@ git config --global tag.gpgsign true
 
 para verificar qual a assinatura do commit:
 git log --show-signature -1
+
+lint para commits:
+
+npm install --save-dev @commitlint/{cli,config-conventional}
+echo "export default { extends: ['@commitlint/config-conventional'] };" > commitlint.config.js
+
+para a proxima parte, o repositorio git deve ter sido já criado
+npm install --save-dev husky
+npx husky init
+
+# Add commit message linting to commit-msg hook
+
+echo "npx --no -- commitlint --edit \$1" > .husky/commit-msg
