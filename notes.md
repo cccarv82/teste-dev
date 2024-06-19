@@ -3,6 +3,9 @@ ignore -n python node
 
 como gerar assinatura pra commits
 
+iniciar o gpg-agent caso não esteja rodando:
+gpgconf --launch gpg-agent
+
 verificar se existe chave criada:
 gpg --list-secret-key --keyid-form LONG
 
